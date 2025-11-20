@@ -1,5 +1,102 @@
 # React + Vite
 
+folder structure :
+src/
+└── Library/
+    └── builder/
+        ├── pages/
+        │   └── BuilderPage.jsx
+
+        ├── config/
+        │   ├── fieldTypes.js
+        │   └── (optional later: previewTypes.js, drawerTypes.js)
+
+        ├── store/
+        │   └── builderStore.js
+
+        ├── fieldbar/
+        │   ├── Fields.jsx
+        │   ├── FieldItem.jsx
+        │   └── index.js   (optional re-export)
+
+        ├── dropzone/
+        │   ├── DropArea.jsx
+        │   ├── DropItem.jsx
+        │   ├── DroppableCard.jsx
+        │   ├── FieldActions.jsx
+        │   └── index.js   (optional re-export)
+
+        ├── fieldCard/
+        │   ├── EditableFieldCard.jsx
+        │   ├── Widget.jsx           ← switch-case renderer
+        │   └── index.js
+
+        ├── fields/
+        │   ├── text/
+        │   │   ├── Text.jsx
+        │   │   └── edit/EditTextField.jsx
+        │   │
+        │   ├── number/
+        │   │   ├── Number.jsx
+        │   │   └── edit/EditNumberField.jsx
+        │   │
+        │   ├── date/
+        │   │   ├── DateField.jsx
+        │   │   └── edit/EditDateField.jsx
+        │   │
+        │   ├── header/
+        │   │   ├── Header.jsx
+        │   │   └── edit/EditHeaderField.jsx
+        │   │
+        │   ├── textarea/
+        │   │   ├── TextArea.jsx
+        │   │   └── edit/EditTextAreaField.jsx
+        │   │
+        │   ├── checkboxGroup/
+        │   │   ├── CheckboxGroup.jsx
+        │   │   └── edit/EditCheckboxGroup.jsx
+        │   │
+        │   ├── radioGroup/
+        │   │   ├── RadioGroup.jsx
+        │   │   └── edit/EditRadioGroup.jsx
+        │   │
+        │   ├── photo/
+        │   │   ├── Photo.jsx
+        │   │   └── edit/EditPhotoField.jsx
+        │   │
+        │   ├── signature/
+        │   │   ├── Signature.jsx
+        │   │   └── edit/EditSignatureField.jsx
+        │   │
+        │   ├── checkpoints/
+        │   │   ├── CheckPoints.jsx
+        │   │   └── edit/EditCheckPoints.jsx
+        │   │
+        │   ├── star/
+        │   │   ├── Star.jsx
+        │   │   └── edit/EditStarField.jsx
+        │   │
+        │   └── index.js   (optional)
+
+        ├── drawer/
+        │   ├── FieldDrawer.jsx
+        │   └── tabs/
+        │       ├── GeneralTab.jsx
+        │       ├── ConditionalTab.jsx
+        │       ├── VisibilityTab.jsx
+        │       ├── DeviationTab.jsx
+        │       └── MultiLingualTab.jsx
+
+        ├── preview/
+        │   ├── MobilePreview.jsx
+        │   ├── Preview.jsx
+        │   └── index.js
+
+        └── common/
+            ├── Required.jsx
+            └── (more common components)
+
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:

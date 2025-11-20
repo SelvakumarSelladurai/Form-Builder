@@ -1,41 +1,35 @@
-import FieldList from "../components/sidebar/FieldList";
-import { useBuilderStore } from "../store/builderStore";
-import FormField from "../components/sidebar/Widgets/common/FormField";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
+
+import Fields from "../fieldbar/Fields";
 
 export default function BuilderPage() {
-  const fields = useBuilderStore((state) => state.fields);
-
   return (
-    <div className="flex w-full h-screen bg-gray-100 p-4 gap-4">
+    <DndProvider backend={HTML5Backend}>
+      <div className="flex w-full h-screen bg-gray-100 p-4 gap-4">
 
-      <FieldList />
+        {/* LEFT: FieldBar (Widgets) */}
+        <div className="w-60">
+          <Fields />
+        </div>
 
-      <div className="flex-1 bg-white shadow rounded p-4 overflow-auto">
-        <h2 className="text-xl font-bold mb-3">Form Area</h2>
+        {/* CENTER: Drop Area (Coming Soon) */}
+        <div className="flex-1 bg-white shadow rounded p-4 overflow-auto">
+          <h2 className="text-xl font-bold mb-3">Form Area</h2>
+          <p className="text-gray-500">
+            DropArea will be implemented later.
+          </p>
+        </div>
 
-        {fields.length === 0 ? (
-          <p className="text-gray-500">Click a field from the left to add it.</p>
-        ) : (
-          <div className="space-y-4">
-            {fields.map((f) => (
-              <div
-                key={f.id}
-                className="p-3 border rounded bg-gray-50"
-              >
-                <FormField field={f} />
-              </div>
-            ))}
-          </div>
-        )}
+        {/* RIGHT: Mobile Preview (Coming Soon) */}
+        <div className="w-80 bg-white shadow rounded p-4">
+          <h2 className="text-lg font-bold mb-3">Preview</h2>
+          <p className="text-gray-500">
+            MobilePreview will be implemented later.
+          </p>
+        </div>
+
       </div>
-
-      <div className="w-64 bg-white shadow rounded p-4">
-        <h2 className="text-xl font-bold">Preview</h2>
-        <p className="text-gray-500 text-sm mt-2">
-          Preview will be added later.
-        </p>
-      </div>
-
-    </div>
+    </DndProvider>
   );
 }

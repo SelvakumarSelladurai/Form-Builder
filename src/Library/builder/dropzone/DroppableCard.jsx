@@ -11,7 +11,7 @@ export default function DroppableCard({ id, index, children }) {
     item: { id, index },
   });
 
-  const [, drop] = useDrop({
+  const [dropping, drop] = useDrop({
     accept: "FIELD_CARD",
     hover(item, monitor) {
       if (!ref.current) return;

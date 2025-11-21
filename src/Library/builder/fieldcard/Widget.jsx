@@ -1,10 +1,10 @@
 import Text from "../fields/text/Text";
-// import NumberField from "../fields/number/Number";
-// import DateField from "../fields/date/DateField";
-// import CheckboxGroup from "../fields/checkboxGroup/CheckboxGroup";
+import Number from "../fields/number/Number";
+import DateField from "../fields/date/DateField";
+import CheckboxGroup from "../fields/checkboxGroup/CheckboxGroup";
 // import RadioGroup from "../fields/radioGroup/RadioGroup";
 // import TextArea from "../fields/textarea/TextArea";
-// import Header from "../fields/header/Header";
+import Header from "../fields/header/Header";
 // import Signature from "../fields/signature/Signature";
 // import Photo from "../fields/photo/Photo";
 // import CheckPoints from "../fields/checkpoints/CheckPoints";
@@ -15,14 +15,14 @@ export default function Widget({ field, index }) {
     case "text":
       return <Text field={field} index={index} />;
 
-    // case "number":
-    //   return <NumberField field={field} index={index} />;
+    case "number":
+     return <Number field={field} index={index} />;
 
-    // case "date":
-    //   return <DateField field={field} index={index} />;
+    case "date":
+       return <DateField field={field} index={index} />;
 
-    // case "checkboxGroup":
-    //   return <CheckboxGroup field={field} index={index} />;
+    case "checkboxGroup":
+      return <CheckboxGroup field={field} index={index} />;
 
     // case "radioGroup":
     //   return <RadioGroup field={field} index={index} />;
@@ -30,8 +30,8 @@ export default function Widget({ field, index }) {
     // case "textarea":
     //   return <TextArea field={field} index={index} />;
 
-    // case "header":
-    //   return <Header field={field} index={index} />;
+    case "header":
+       return <Header field={field} index={index} />;
 
     // case "signature":
     //   return <Signature field={field} index={index} />;

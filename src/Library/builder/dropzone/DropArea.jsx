@@ -15,7 +15,7 @@ export default function DropArea() {
       ref={dropRef}
       className="w-full h-full bg-white border rounded-xl p-4 overflow-y-auto"
     >
-      <h2 className="text-xl font-bold mb-3">Form Area</h2>
+      <h2 className="text-xl font-bold mb-3">Drop Area</h2>
 
       {fields.length === 0 ? (
         <p className="text-gray-500 text-center mt-20">

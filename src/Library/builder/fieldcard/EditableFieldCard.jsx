@@ -13,12 +13,6 @@ export default function EditableFieldCard({ field, index }) {
 
       <Widget field={field} index={index} />
 
-      <button
-        onClick={() => openDrawer(index)}
-        className="text-blue-600 text-sm underline"
-      >
-        Edit Field
-      </button>
     </div>
   );
 }

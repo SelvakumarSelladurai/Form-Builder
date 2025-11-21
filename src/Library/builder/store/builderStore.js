@@ -5,24 +5,32 @@ export const useBuilderStore = create((set, get) => ({
   editingIndex: null,
 
   addField: (widget) =>
-    set((state) => ({
-      fields: [
-        ...state.fields,
-        {
-          id: Date.now(),
-          type: widget.type,
-          label: widget.label || "Untitled",
-          placeholder: widget.placeholder || "",
-          required: false,
-          options: widget.options || [],
-          value: "",
-        },
-      ],
-    })),
+  set((state) => ({
+    fields: [
+      ...state.fields,
+      {
+        id: Date.now(),
+        type: widget.type,
+        label: widget.label || "Untitled",
+        placeholder: widget.placeholder || "",
+        required: false,
+        options: widget.options || [],
+
+        value: widget.type === "star5" || widget.type === "star10" ? 0 : "",
+
+        max:
+          widget.type === "star10"
+            ? 10
+            : widget.type === "star5"
+            ? 5
+            : undefined,
+      },
+    ],
+  })),
 
   deleteField: (index) =>
     set((state) => ({
-      fields: state.fields.filter((_, i) => i !== index),
+      fields: state.fields.filter((filder, i) => i !== index),
     })),
 
   duplicateField: (index) =>

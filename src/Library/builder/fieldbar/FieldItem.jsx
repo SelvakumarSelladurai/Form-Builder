@@ -12,11 +12,8 @@ export default function FieldItem({ field }) {
   return (
     <div
       ref={drag}
-      className={`
-        p-3 mb-2 border rounded-lg cursor-pointer
-        bg-gray-50 hover:bg-gray-100 transition
-        ${isDragging ? "opacity-50" : ""}
-      `}
+      className={`p-3 mb-2 border rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 transition
+                  ${isDragging ? "opacity-50" : ""}`}
     >
       {field.label}
     </div>

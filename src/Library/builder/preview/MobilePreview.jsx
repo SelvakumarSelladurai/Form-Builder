@@ -1,17 +1,16 @@
+import { useBuilderStore } from "../store/builderStore";
 import Preview from "../preview/Preview";
 
-export default function MobilePreview({
-  fields = [],
-  checklistTitle = "Checklist Name",
-}) {
+export default function MobilePreview({ checklistTitle = "Checklist Name" }) {
+  const fields = useBuilderStore((state) => state.fields);
+
   return (
     <div className="w-full flex justify-center items-start">
 
       <div
         className="relative bg-white rounded-[40px] shadow-2xl flex flex-col overflow-hidden border-2 border-black"
-        style={{width: "280px",height: "560px",}}
+        style={{ width: "280px", height: "560px" }}
       >
-
         <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-12 h-3 rounded-b-xl bg-black"></div>
 
         <div className="pt-6 pb-4 text-center border-b bg-white">
@@ -36,8 +35,8 @@ export default function MobilePreview({
         <div className="py-4 flex justify-center bg-white">
           <div className="w-28 h-1.5 bg-gray-500 rounded-full"></div>
         </div>
-
       </div>
+
     </div>
   );
 }
